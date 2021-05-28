@@ -1,0 +1,25 @@
+{
+    "name": "LookAndFeel",
+    "description": "Apply css and change website stylesheet.",
+    "version": "1.0",
+    "manifest_version": 3,
+    "background": {
+        "service_worker": "background.js"
+    },
+    "permissions": [
+        "storage",
+        "activeTab",
+        "scripting",
+        "webNavigation",
+        "tabs"
+    ],
+    "action": {
+        "default_popup": "popup.html"
+    },
+    "content_scripts": [{
+        "matches": [
+            "https://jira.fastenal.com/*"
+        ],
+        "js": ["content.js"]
+    }]
+}
